@@ -1,0 +1,36 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.company'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'junit:junit:4.12'
+    testImplementation('org.springframework.boot:spring-boot-starter-test'){
+        exclude(group: "com.vaadin.external.google", module:"android-json")
+    }
+    compileOnly('org.springframework.boot:spring-boot-starter-web:2.5.0')
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.5.0'
+    implementation 'org.json:json:20210307'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+
+
+
+
+
